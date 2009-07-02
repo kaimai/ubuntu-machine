@@ -20,7 +20,12 @@ namespace :essentials do
     sudo "apt-get install -y lynx"
   end
 
-  desc "Install monit"
+  desc <<-DESC
+    Install monit
+    after installation, please configure monit and then edit /etc/default/monit
+    and set the "startup" variable to 1 in order to allow 
+    monit to start
+  DESC
   task :monit do
     sudo "apt-get install -y monit"
   end
