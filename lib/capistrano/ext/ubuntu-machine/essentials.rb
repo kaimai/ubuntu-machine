@@ -19,7 +19,12 @@ namespace :essentials do
   task :lynx do
     sudo "apt-get install -y lynx"
   end
-
+  
+  desc "Install memcached"
+  task :memcached do
+    sudo "apt-get install -y memcached"
+  end
+  
   desc <<-DESC
     Install monit
     after installation, please configure monit and then edit /etc/default/monit
@@ -36,6 +41,7 @@ namespace :essentials do
     sudo "gem install rails --no-rdoc --no-ri"
     sudo "gem install rack thin --no-rdoc --no-ri"
     sudo "gem install rails -v 2.2.2 --no-rdoc --no-ri"
+    sudo "gem install fiveruns-starling --no-rdoc --no-ri"
     
     # dependency for feedzirra
     sudo "apt-get install -y libxml2-dev"
@@ -47,6 +53,8 @@ namespace :essentials do
     # end of dependency for feedzirra
     
     sudo "gem install capistrano capistrano-ext capitate --no-rdoc --no-ri"
+
+    
     sudo "apt-get install -y libmysqlclient15-dev"
     sudo "gem install mysql --no-rdoc --no-ri"
 
